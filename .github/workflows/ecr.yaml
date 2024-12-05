@@ -18,10 +18,10 @@ jobs:
         uses: actions/checkout@v3
       # Step to call the reusable workflow
       - name: Call Reusable Terraform Workflow
-        uses: aeiforo-co-uk/dt-pillars-terraform-infra-repo/blob/main/.github/workflows/infra.yml
+        uses: aeiforo-co-uk/dt-pillars-terraform-infra-repo/.github/workflows/infra.yml@main
         with:
           repo_name: 'aeiforo-co-uk/dt-module-terraform-infra-repo'
           deploy_env: 'staging'
           terraform_version: '1.5.0'
           plan_and_apply: true
-        secrets: inherit
+          secrets: inherit
