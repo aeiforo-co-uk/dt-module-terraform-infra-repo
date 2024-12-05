@@ -1,6 +1,8 @@
 name: Call Terraform CI/CD Pipeline
+
 on:
   workflow_dispatch:
+
 jobs:
   setup-and-call-reusable-workflow:
     name: Setup and Reuse Terraform Pipeline
@@ -13,10 +15,12 @@ jobs:
           echo "${{ secrets.MODULE_DEPLOY_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
+
       # Step to ensure the calling repo is checked out
       - name: Checkout Calling Repository
         uses: actions/checkout@v3
-      # Step to call the reusable workflow
+
+      # Step to call the reusable workflow in Repo-1
       - name: Call Reusable Terraform Workflow
         uses: aeiforo-co-uk/dt-pillars-terraform-infra-repo/.github/workflows/infra.yml@main
         with:
@@ -24,4 +28,3 @@ jobs:
           deploy_env: 'staging'
           terraform_version: '1.5.0'
           plan_and_apply: true
-          secrets: inherit
