@@ -37,25 +37,25 @@ variable "repository_name" {
 variable "repository_image_tag_mutability" {
   description = "The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `IMMUTABLE`"
   type        = string
-  # default     = "IMMUTABLE"
+  default     = "IMMUTABLE"
 }
 
 variable "repository_encryption_type" {
   description = "The encryption type for the repository. Must be one of: `KMS` or `AES256`. Defaults to `AES256`"
   type        = string
-  # default     = KMS
+  default     = KMS
 }
 
 variable "repository_kms_key" {
   description = "The ARN of the KMS key to use when encryption_type is `KMS`. If not specified, uses the default AWS managed key for ECR"
   type        = string
-  # default     = []
+  default     = []
 }
 
 variable "repository_image_scan_on_push" {
   description = "Indicates whether images are scanned after being pushed to the repository (`true`) or not scanned (`false`)"
   type        = bool
-  # default     = true
+  default     = true
 }
 
 variable "repository_policy" {
@@ -67,7 +67,7 @@ variable "repository_policy" {
 variable "repository_force_delete" {
   description = "If `true`, will delete the repository even if it contains images. Defaults to `false`"
   type        = bool
-  # default     = true
+  default     = true
 }
 
 ################################################################################
@@ -83,7 +83,7 @@ variable "attach_repository_policy" {
 variable "create_repository_policy" {
   description = "Determines whether a repository policy will be created"
   type        = bool
-  # default     = true
+  default     = true
 }
 
 variable "repository_read_access_arns" {
