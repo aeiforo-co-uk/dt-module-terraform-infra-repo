@@ -43,7 +43,7 @@ variable "repository_image_tag_mutability" {
 variable "repository_encryption_type" {
   description = "The encryption type for the repository. Must be one of: `KMS` or `AES256`. Defaults to `AES256`"
   type        = string
-  default     = KMS
+  default     = "KMS"
 }
 
 variable "repository_kms_key" {
