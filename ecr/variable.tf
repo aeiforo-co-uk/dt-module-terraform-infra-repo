@@ -49,7 +49,7 @@ variable "repository_encryption_type" {
 variable "repository_kms_key" {
   description = "The ARN of the KMS key to use when encryption_type is `KMS`. If not specified, uses the default AWS managed key for ECR"
   type        = string
-  default     = []
+  default     = ""
 }
 
 variable "repository_image_scan_on_push" {
